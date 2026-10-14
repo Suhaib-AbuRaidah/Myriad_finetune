@@ -1,0 +1,218 @@
+{
+  "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+  "split": "val",
+  "examples": 11,
+  "max_formula_error_normalized": 3.7564200527917535e-08,
+  "all_other_pixels_unchanged": true,
+  "examples_verified": [
+    {
+      "sample_id": "17864c0c72944ce191dbed86102a6f8e:parent=-1:child=0:joint=0",
+      "scene_path": "data/Robotic_arm/val/scenes/17864c0c72944ce191dbed86102a6f8e.npz",
+      "pair_labels": [
+        -1,
+        0
+      ],
+      "joint_index": 0,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 2.5831858430080956e-08,
+      "initial_roundtrip_error_normalized": 2.53669898420128e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.0850803554058075,
+      "endpoint_actual_relative_difference_pixels": 6.058504810528286e-06,
+      "valid_points": 8,
+      "cache_key": "c209f425906043ec418d59a0883325f3184f1e72d4e4a872e611c5b5157415f6"
+    },
+    {
+      "sample_id": "17864c0c72944ce191dbed86102a6f8e:parent=0:child=1:joint=1",
+      "scene_path": "data/Robotic_arm/val/scenes/17864c0c72944ce191dbed86102a6f8e.npz",
+      "pair_labels": [
+        0,
+        1
+      ],
+      "joint_index": 1,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 1.666796828336814e-08,
+      "initial_roundtrip_error_normalized": 1.4473190479424858e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.08081087470054626,
+      "endpoint_actual_relative_difference_pixels": 49.67907247448001,
+      "valid_points": 8,
+      "cache_key": "66a2f7b98131933d6de4ada78238eceffc65fe81aa4c228901205c10bec9a0ca"
+    },
+    {
+      "sample_id": "17864c0c72944ce191dbed86102a6f8e:parent=1:child=2:joint=2",
+      "scene_path": "data/Robotic_arm/val/scenes/17864c0c72944ce191dbed86102a6f8e.npz",
+      "pair_labels": [
+        1,
+        2
+      ],
+      "joint_index": 2,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 1.5190989854918513e-08,
+      "initial_roundtrip_error_normalized": 1.4239751933153855e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.02243933081626892,
+      "endpoint_actual_relative_difference_pixels": 33.66411879683143,
+      "valid_points": 8,
+      "cache_key": "2c14f5aeef893e44c8d79218e0726bc596df8947f86c171925b20478527e25c5"
+    },
+    {
+      "sample_id": "7fa9a3dc20f54cecbf49143fdbdcdcd3:parent=-1:child=0:joint=0",
+      "scene_path": "data/Robotic_arm/val/scenes/7fa9a3dc20f54cecbf49143fdbdcdcd3.npz",
+      "pair_labels": [
+        -1,
+        0
+      ],
+      "joint_index": 0,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 2.95207800427022e-08,
+      "initial_roundtrip_error_normalized": 2.9413258162414024e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.17299321293830872,
+      "endpoint_actual_relative_difference_pixels": 7.554516748352159e-06,
+      "valid_points": 8,
+      "cache_key": "e725c8322a5d0c6abedf491c663bd05e3a126e30abdeb26a4095638ba5765cab"
+    },
+    {
+      "sample_id": "7fa9a3dc20f54cecbf49143fdbdcdcd3:parent=0:child=1:joint=1",
+      "scene_path": "data/Robotic_arm/val/scenes/7fa9a3dc20f54cecbf49143fdbdcdcd3.npz",
+      "pair_labels": [
+        0,
+        1
+      ],
+      "joint_index": 1,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 3.231434086981011e-08,
+      "initial_roundtrip_error_normalized": 2.8635129600829146e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.05527013540267944,
+      "endpoint_actual_relative_difference_pixels": 99.31497210358104,
+      "valid_points": 8,
+      "cache_key": "5f62a20b8f6ec6f1a66898bdfe925d1dec957f953a247e7f47c26422684078e9"
+    },
+    {
+      "sample_id": "7fa9a3dc20f54cecbf49143fdbdcdcd3:parent=1:child=2:joint=2",
+      "scene_path": "data/Robotic_arm/val/scenes/7fa9a3dc20f54cecbf49143fdbdcdcd3.npz",
+      "pair_labels": [
+        1,
+        2
+      ],
+      "joint_index": 2,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 3.0023139307999713e-08,
+      "initial_roundtrip_error_normalized": 2.739012394670226e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.06624683737754822,
+      "endpoint_actual_relative_difference_pixels": 166.08741085828245,
+      "valid_points": 8,
+      "cache_key": "78e90c4c7932d996c50e4878531daad4e15a50def6452e324b8a4ff2df5fcd6d"
+    },
+    {
+      "sample_id": "b54d3c24eb0c4c90b18c47a679ca6b23:parent=-1:child=0:joint=0",
+      "scene_path": "data/Robotic_arm/val/scenes/b54d3c24eb0c4c90b18c47a679ca6b23.npz",
+      "pair_labels": [
+        -1,
+        0
+      ],
+      "joint_index": 0,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 2.980250302098142e-08,
+      "initial_roundtrip_error_normalized": 1.929758730589981e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.3115413784980774,
+      "endpoint_actual_relative_difference_pixels": 6.008835349823963e-06,
+      "valid_points": 8,
+      "cache_key": "31cd6599e6f92696eef96ac4e2907226aada5a13cd9e04d300c57ad58891f19d"
+    },
+    {
+      "sample_id": "b54d3c24eb0c4c90b18c47a679ca6b23:parent=0:child=1:joint=1",
+      "scene_path": "data/Robotic_arm/val/scenes/b54d3c24eb0c4c90b18c47a679ca6b23.npz",
+      "pair_labels": [
+        0,
+        1
+      ],
+      "joint_index": 1,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 3.7564200527917535e-08,
+      "initial_roundtrip_error_normalized": 2.9413258162414024e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.2410646229982376,
+      "endpoint_actual_relative_difference_pixels": 155.15372946186042,
+      "valid_points": 8,
+      "cache_key": "90856ce4da098d04c0ffce1de02b478c03ca0bea4ef40843ec7da7903a41e29d"
+    },
+    {
+      "sample_id": "b54d3c24eb0c4c90b18c47a679ca6b23:parent=1:child=2:joint=2",
+      "scene_path": "data/Robotic_arm/val/scenes/b54d3c24eb0c4c90b18c47a679ca6b23.npz",
+      "pair_labels": [
+        1,
+        2
+      ],
+      "joint_index": 2,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 3.009460913805384e-08,
+      "initial_roundtrip_error_normalized": 2.8790755335350582e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": true,
+      "max_relative_displacement_normalized": 5.960464477539063e-08,
+      "endpoint_actual_relative_difference_pixels": 112.8367643876712,
+      "valid_points": 8,
+      "cache_key": "ac33c7666c3fdfa43cd9cbf80b90e897ea72d22431f95be54d72350e4c3ba0bb"
+    },
+    {
+      "sample_id": "d38fc62418f14d62808ab6fb9e26f9ed:parent=-1:child=0:joint=0",
+      "scene_path": "data/Robotic_arm/val/scenes/d38fc62418f14d62808ab6fb9e26f9ed.npz",
+      "pair_labels": [
+        -1,
+        0
+      ],
+      "joint_index": 0,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 3.1173823078489704e-08,
+      "initial_roundtrip_error_normalized": 2.7545749681223697e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.5198965072631836,
+      "endpoint_actual_relative_difference_pixels": 4.949792931082908e-06,
+      "valid_points": 8,
+      "cache_key": "b08a89dbb904a2ddfc1d5b65e2e41114fe2200fb98f0807ec497a33aedd40026"
+    },
+    {
+      "sample_id": "d38fc62418f14d62808ab6fb9e26f9ed:parent=0:child=1:joint=1",
+      "scene_path": "data/Robotic_arm/val/scenes/d38fc62418f14d62808ab6fb9e26f9ed.npz",
+      "pair_labels": [
+        0,
+        1
+      ],
+      "joint_index": 1,
+      "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+      "overlay_alpha": 0.85,
+      "max_formula_error_normalized": 2.6916629813911186e-08,
+      "initial_roundtrip_error_normalized": 2.6611995496139684e-08,
+      "other_parts_background_unchanged": true,
+      "fixed_joint": false,
+      "max_relative_displacement_normalized": 0.04396766424179077,
+      "endpoint_actual_relative_difference_pixels": 224.88284383057717,
+      "valid_points": 8,
+      "cache_key": "7751e485495821a03a582bc85b6a60855a2c17a81d8dc5e4a0d48745c12a1a6a"
+    }
+  ]
+}

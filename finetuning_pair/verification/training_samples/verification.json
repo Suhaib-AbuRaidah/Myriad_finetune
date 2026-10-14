@@ -1,0 +1,81 @@
+[
+  {
+    "sample_id": "14f986851ccc42ccaf0dd9879bd6a602:parent=1:child=2:joint=2",
+    "scene_path": "data/Robotic_arm/train/scenes/14f986851ccc42ccaf0dd9879bd6a602.npz",
+    "pair_labels": [
+      1,
+      2
+    ],
+    "joint_index": 2,
+    "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+    "overlay_alpha": 0.85,
+    "max_formula_error_normalized": 2.0668854183725216e-08,
+    "initial_roundtrip_error_normalized": 1.929758730589981e-08,
+    "other_parts_background_unchanged": true,
+    "fixed_joint": false,
+    "max_relative_displacement_normalized": 0.04724874347448349,
+    "endpoint_actual_relative_difference_pixels": 194.86242109998827,
+    "valid_points": 8,
+    "cache_key": "51d92608513b942563e46b8349c27c7d815423a8c94a23914f5f364357a82840",
+    "raw_inference_input_matches_training": true
+  },
+  {
+    "sample_id": "a5f099d3104c4965a47e93f524e6ba94:parent=-1:child=0:joint=0",
+    "scene_path": "data/Robotic_arm/train/scenes/a5f099d3104c4965a47e93f524e6ba94.npz",
+    "pair_labels": [
+      -1,
+      0
+    ],
+    "joint_index": 0,
+    "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+    "overlay_alpha": 0.85,
+    "max_formula_error_normalized": 3.26046377674416e-08,
+    "initial_roundtrip_error_normalized": 2.5055738372969927e-08,
+    "other_parts_background_unchanged": true,
+    "fixed_joint": false,
+    "max_relative_displacement_normalized": 0.03879392147064209,
+    "endpoint_actual_relative_difference_pixels": 5.45638297662576e-06,
+    "valid_points": 8,
+    "cache_key": "be412e4f2895bfa013426c9e8af7f9c164b4d3b114e9997cf350863a1cb80948",
+    "raw_inference_input_matches_training": true
+  },
+  {
+    "sample_id": "c5867cac404348f5be4697ea591bd13d:parent=0:child=1:joint=1",
+    "scene_path": "data/Robotic_arm/train/scenes/c5867cac404348f5be4697ea591bd13d.npz",
+    "pair_labels": [
+      0,
+      1
+    ],
+    "joint_index": 1,
+    "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+    "overlay_alpha": 0.85,
+    "max_formula_error_normalized": 1.832306611992962e-08,
+    "initial_roundtrip_error_normalized": 1.2605682053745682e-08,
+    "other_parts_background_unchanged": true,
+    "fixed_joint": false,
+    "max_relative_displacement_normalized": 0.14126232266426086,
+    "endpoint_actual_relative_difference_pixels": 32.30734216327455,
+    "valid_points": 8,
+    "cache_key": "ee19adf2abc1e43c2a4f34a036f4452adbff5f20a639da8082447d2e1191f4aa",
+    "raw_inference_input_matches_training": true
+  },
+  {
+    "sample_id": "00018c6128994a5eac8ac6eb31638ce1:parent=1:child=2:joint=2",
+    "scene_path": "data/Robotic_arm/train/scenes/00018c6128994a5eac8ac6eb31638ce1.npz",
+    "pair_labels": [
+      1,
+      2
+    ],
+    "joint_index": 2,
+    "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+    "overlay_alpha": 0.85,
+    "max_formula_error_normalized": 3.1214309359484105e-08,
+    "initial_roundtrip_error_normalized": 1.9608838774942683e-08,
+    "other_parts_background_unchanged": true,
+    "fixed_joint": true,
+    "max_relative_displacement_normalized": 5.960464477539063e-08,
+    "endpoint_actual_relative_difference_pixels": 69.56759560012675,
+    "valid_points": 8,
+    "cache_key": "6fa6ec86adabb84e25049fbfb7595c9b96dc7d28065fe1737e7ac29372efa238"
+  }
+]

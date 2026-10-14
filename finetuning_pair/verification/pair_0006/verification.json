@@ -1,0 +1,19 @@
+{
+  "sample_id": "c5867cac404348f5be4697ea591bd13d:parent=-1:child=0:joint=0",
+  "scene_path": "data/Robotic_arm/train/scenes/c5867cac404348f5be4697ea591bd13d.npz",
+  "pair_labels": [
+    -1,
+    0
+  ],
+  "joint_index": 0,
+  "target_definition": "child_relative_frozen_initial_parent_camera_v1",
+  "overlay_alpha": 0.85,
+  "max_formula_error_normalized": 3.260635050850169e-08,
+  "initial_roundtrip_error_normalized": 2.6611995496139684e-08,
+  "other_parts_background_unchanged": true,
+  "fixed_joint": false,
+  "max_relative_displacement_normalized": 0.05417972803115845,
+  "endpoint_actual_relative_difference_pixels": 6.161940832033871e-06,
+  "valid_points": 8,
+  "cache_key": "a2221383ccfcd4c0bbe084cac16e0c17bacbf879d3363d06b34756df582bb893"
+}

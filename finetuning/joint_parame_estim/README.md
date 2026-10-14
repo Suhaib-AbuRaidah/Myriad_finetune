@@ -75,3 +75,6 @@ saved per-joint estimates without another inference or fitting pass.
 
 The earlier independent-link-pose results and figures are preserved under
 `baseline_independent_pose/` for comparison.
+
+For the small parent-child-only inference experiment and its matched
+full-scene comparison, see [`PAIRWISE_EXPERIMENT.md`](PAIRWISE_EXPERIMENT.md).

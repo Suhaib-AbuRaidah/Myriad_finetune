@@ -1,0 +1,41 @@
+test_3d_parent_cancellation_with_nonidentity_camera (test_pair_pipeline.PairPipelineTests.test_3d_parent_cancellation_with_nonidentity_camera) ... ok
+test_batch_teacher_forced_positions_flows_and_masked_loss (test_pair_pipeline.PairPipelineTests.test_batch_teacher_forced_positions_flows_and_masked_loss) ... ok
+test_cache_separates_pairs_opacity_target_and_source (test_pair_pipeline.PairPipelineTests.test_cache_separates_pairs_opacity_target_and_source) ... ok
+test_endpoint_rest_preserved_when_subsampling (test_pair_pipeline.PairPipelineTests.test_endpoint_rest_preserved_when_subsampling) ... ok
+test_enumeration_child_only_padding_and_relative_fixed_joint (test_pair_pipeline.PairPipelineTests.test_enumeration_child_only_padding_and_relative_fixed_joint) ... ok
+test_full_evaluation_manifest_and_relative_archives (test_pair_pipeline.PairPipelineTests.test_full_evaluation_manifest_and_relative_archives) ... {"event": "scene_complete", "mode": "without_poke", "index": 0, "completed": 1, "total": 3, "minADE_1": 0.0026885000988841057, "seconds": 0.05}
+{"event": "scene_complete", "mode": "without_poke", "index": 1, "completed": 2, "total": 3, "minADE_1": 0.005265598651021719, "seconds": 0.0}
+{"event": "scene_complete", "mode": "without_poke", "index": 2, "completed": 3, "total": 3, "minADE_1": 0.0, "seconds": 0.0}
+ok
+test_original_fm_head_forward_backward (test_pair_pipeline.PairPipelineTests.test_original_fm_head_forward_backward) ... ok
+test_reject_actual_target_checkpoints (test_pair_pipeline.PairPipelineTests.test_reject_actual_target_checkpoints) ... ok
+test_rgb_masks_points_only_inference_equals_training (test_pair_pipeline.PairPipelineTests.test_rgb_masks_points_only_inference_equals_training) ... ok
+test_roles_only_and_texture_blending (test_pair_pipeline.PairPipelineTests.test_roles_only_and_texture_blending) ... ok
+test_targets_outside_image_remain_masked_and_can_be_skipped (test_pair_pipeline.PairPipelineTests.test_targets_outside_image_remain_masked_and_can_be_skipped) ... ok
+test_training_random_pair_and_repeatable_sampling_stream (test_pair_pipeline.PairPipelineTests.test_training_random_pair_and_repeatable_sampling_stream) ... ok
+test_validation_testing_and_persisted_pair_metadata (test_pair_pipeline.PairPipelineTests.test_validation_testing_and_persisted_pair_metadata) ... ok
+test_auto_amp_requires_native_bf16 (test_parallel.ParallelTests.test_auto_amp_requires_native_bf16) ... ok
+test_two_rank_periodic_validation_saves_tests_and_resume (test_parallel.ParallelTests.test_two_rank_periodic_validation_saves_tests_and_resume) ... {"batch_per_gpu": 1, "device": "cpu", "event": "model_ready", "global_batch_size": 2, "rank": 1, "trainable_parameters": 2, "world_size": 2}
+{"batch_per_gpu": 1, "device": "cpu", "event": "model_ready", "global_batch_size": 2, "rank": 0, "trainable_parameters": 2, "world_size": 2}
+{"event": "train", "grad_norm": 0.023175209760665894, "lr_lora": 7.500249999999999e-05, "lr_other": 2.25025e-05, "step": 1, "step_seconds": 0.002466663019731641, "train_loss": 0.0001592502521816641}
+{"event": "checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/latest.pt", "step": 1}
+{"event": "validation", "minADE_5": 0.5, "step": 2}
+{"event": "best_checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/best.pt", "selection_mode": "without", "step": 2, "val_minADE_5": 0.5}
+{"event": "checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/latest.pt", "step": 2}
+{"event": "test", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/tests/step_000002", "step": 2}
+{"batch_per_gpu": 1, "device": "cpu", "event": "model_ready", "global_batch_size": 2, "rank": 1, "trainable_parameters": 2, "world_size": 2}
+{"batch_per_gpu": 1, "device": "cpu", "event": "model_ready", "global_batch_size": 2, "rank": 0, "trainable_parameters": 2, "world_size": 2}
+{"event": "resumed", "step": 2, "epoch": 0, "offset": 3, "dataset_size": 3}
+{"event": "resumed", "step": 2, "epoch": 0, "offset": 3, "dataset_size": 3}
+{"event": "checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/latest.pt", "step": 3}
+{"event": "validation", "minADE_5": 0.25, "step": 4}
+{"event": "best_checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/best.pt", "selection_mode": "without", "step": 4, "val_minADE_5": 0.25}
+{"event": "checkpoint", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/latest.pt", "step": 4}
+{"event": "test", "path": "/home/aburaidah/Myriad_finetune/finetuning_pair/.test_artifacts/tmp4_r9_o3b/run/tests/step_000004", "step": 4}
+ok
+test_two_rank_weighted_gradients_padding_and_rng_resume (test_parallel.ParallelTests.test_two_rank_weighted_gradients_padding_and_rng_resume) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 11.407s
+
+OK

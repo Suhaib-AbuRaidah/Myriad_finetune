@@ -1,0 +1,8 @@
+{
+  "rank": 0,
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+  "native_bf16": false,
+  "gradient_sum_correct": true,
+  "rank_cuda_rng_resume": true
+}
