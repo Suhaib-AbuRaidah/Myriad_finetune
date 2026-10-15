@@ -120,3 +120,100 @@ python -m finetuning_pair.inference \
 Masks must be disjoint visible masks in the original RGB resolution; use nonzero PNG or `.npy [H,W]` pixels. Points are unique initially visible child coordinates in original-image pixels (`.npy [N,2]`, x/y). The same crop/resize converts them into model coordinates. Alternatively supply `--point-space normalized-model` with coordinates normalized over the resized crop. Image size, alpha and default progress times come from the pair checkpoint. Autoregressive K/V cache buffers match the active sampling precision (float32 when AMP is disabled). This CLI requires no depth, kinematic tree, future image or ground-truth transforms, and always supplies only the initial child points. `predictions.npz` contains normalized child-relative trajectories in the resized image frame.
 
 The implementation uses the existing dependencies in `environment.yml`. Full pretrained-model training/inference requires sufficient device memory. The saved target visualizations can be reproduced on CPU without loading the multi-gigabyte pretrained model.
+
+## First-scene joint analysis
+
+```bash
+conda activate myriad_finetune
+python -m finetuning_pair.analyze_joints \
+  --checkpoint finetuning_pair/runs/pair/best.pt \
+  --first-scenes 50 --device cuda:1 --amp-dtype none
+```
+
+This uses the first 50 scene filenames in ascending order and every eligible
+child pair in those scenes. It saves five hypotheses per pair for both poke
+modes, trajectory metrics, calibrated 3D joint fits, axis orientation error,
+pivot-to-axis distance, rotation errors, and overall/per-joint/per-depth/per-scene
+statistics under `runs/test1_first50_analysis/`. Axes and pivots are fit from
+predicted states 2–4 using a stationary parent, matching the checkpoint's
+relative targets. The same fitter on true tracks provides a geometry control.
+Main axis/pivot metrics are conditional on correctly typed revolute joints;
+forced-revolute metrics, type recall and exclusions are saved alongside them.
+
+The prediction NPZ files include initial RGB-D, segmentation, calibration,
+selected points, link transforms, and joint metadata for later visualization.
+To render an example without loading weights or using CUDA:
+
+```bash
+python -m finetuning_pair.visualize_joint_results \
+  --scene-index 0 --joint-index 0 --mode without_poke
+```
+
+Joint IDs are zero-based. `ARTIFACTS.md` in the output folder describes all
+saved files. Reports can be rebuilt with
+`python -m finetuning_pair.analyze_joints --report-only`.
+
+## Live Open3D: all joints together
+
+Install the optional viewer dependency in `myriad_finetune`:
+
+```bash
+python -m pip install -r finetuning_pair/requirements-visualization.txt
+```
+
+From a graphical desktop terminal, browse the ten best **whole scenes** from
+the saved with-poke evaluation:
+
+```bash
+conda activate myriad_finetune
+python -m finetuning_pair.inference \
+  --saved-run finetuning_pair/runs/test1_first50_analysis \
+  --mode with_poke --top-k 10 --show-pointcloud
+```
+
+This opens an interactive Open3D window with the initial object point cloud
+and **every available predicted joint axis simultaneously**. A second window
+shows **every joint's predicted point trajectories together** on the original
+initial RGB image, using the same joint colors. Hypothesis 0 is displayed so
+the axes and tracks match the reported evaluation errors. GT overlays are
+green; the optional stored GT axes are cyan. Fixed predictions have no axis;
+prismatic directions are anchored at the observed part centroid because their
+axis location is unidentifiable. The cloud includes only initially visible
+object surfaces with finite positive depth. Trajectories are the independently
+parent-frozen relative predictions for each joint.
+
+Use **Next / Previous** in the control window, or **N / P** in the Open3D
+window. Drag to rotate, scroll to zoom, **R** resets the camera, and **S** saves
+the current point-cloud screenshot plus the combined trajectory image. Closing
+either window ends the process. The windows stay open until closed; no PLY
+export or model rerun is needed.
+
+Ranking averages axis orientation error across a scene's eligible GT revolute
+joints, requiring a valid, correctly typed axis estimate for **all** of them.
+Fixed joints do not contribute an undefined orientation score. This prevents
+missing estimates from improving a scene's rank. It covers the saved first
+50 test1 scenes, not the entire test1 split. The top ten scene indices are
+47, 35, 41, 25, 21, 28, 10, 23, 32, 6. CSV/JSON rankings and all-joint trajectory
+PNGs are saved in `runs/test1_first50_analysis/open3d_visualizations/`.
+
+To show a specific whole scene:
+
+```bash
+python -m finetuning_pair.inference \
+  --saved-run finetuning_pair/runs/test1_first50_analysis \
+  --mode with_poke --scene-index 6 --show-pointcloud
+```
+
+To regenerate only the rankings and all-joint images, use `--list-top` instead
+of `--show-pointcloud`. The viewer uses native Open3D visualization and Tk for
+the companion image window; it does not initialize a browser or reload CUDA
+model weights. [Open3D visualization API](https://www.open3d.org/docs/release/python_api/open3d.visualization.VisualizerWithKeyCallback.html).
+
+For a **new raw RGB-D pair inference**, append `--show-pointcloud --depth
+current_depth.npy --intrinsics camera_K.npy` to the existing RGB/mask/point
+inference command. Optionally provide `--extrinsics T_camera_world.npy` and
+`--object-mask whole_object.png`. Depth values use world units; the extrinsic
+defaults to identity (camera frame). This fits the selected pair's hypothesis-0
+motion with predicted in-frame validity only, saves `joint_estimate.json` and
+`pointcloud_inputs.npz`, and opens the same live viewer. The saved-scene command
+above aggregates all of a scene's pair predictions.

@@ -9,22 +9,16 @@ import json
 from pathlib import Path
 import numpy as np
 from PIL import Image
-import torch
-
-from finetuning_pair.checkpoint_io import inspect_checkpoint, load_finetuned_weights, load_pretrained_weights
-from finetuning_pair.conditioning import blend_roles, crop_geometry, normalized_pixels
-from finetuning_pair.dataset import _image_tensor
 from finetuning_pair.geometry import TARGET_DEFINITION
-from finetuning_pair.model_adapter import FineTuningModel, LoRAConfig
 from finetuning_pair.paths import artifact_path
-from finetuning_pair.testing import sample_rollout
-from finetuning_pair.train import build_myriad, _resolve_device
-from finetuning_pair.visualizer import render_rollout
 
 
 def prepare_inputs(rgb, parent_mask, child_mask, points, *, image_size=384,
                    overlay_alpha=0.85, point_space='source-pixels', max_track_ids=256):
     """Prepare exactly the same conditioning as training, with child-only queries."""
+    import torch
+    from finetuning_pair.dataset import _image_tensor
+    from finetuning_pair.conditioning import blend_roles, crop_geometry, normalized_pixels
     rgb = np.asarray(rgb)
     parent = np.asarray(parent_mask, dtype=bool)
     child = np.asarray(child_mask, dtype=bool)
@@ -66,11 +60,11 @@ def read_mask(path):
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--checkpoint', type=Path, required=True)
-    parser.add_argument('--image', type=Path, required=True)
-    parser.add_argument('--parent-mask', type=Path, required=True, help='Visible parent mask, PNG or .npy')
-    parser.add_argument('--child-mask', type=Path, required=True, help='Visible child mask, PNG or .npy')
-    parser.add_argument('--points', type=Path, required=True, help='.npy [N,2] child query points')
+    parser.add_argument('--checkpoint', type=Path)
+    parser.add_argument('--image', type=Path)
+    parser.add_argument('--parent-mask', type=Path, help='Visible parent mask, PNG or .npy')
+    parser.add_argument('--child-mask', type=Path, help='Visible child mask, PNG or .npy')
+    parser.add_argument('--points', type=Path, help='.npy [N,2] child query points')
     parser.add_argument('--point-space', choices=('source-pixels', 'normalized-model'), default='source-pixels')
     parser.add_argument('--state-times', help='Motion progress times; default comes from checkpoint')
     parser.add_argument('--output-dir', type=Path, default=Path('finetuning_pair/runs/inference'))
@@ -79,15 +73,53 @@ def parse_args(argv=None):
     parser.add_argument('--diffusion-steps', type=int, default=16)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--amp-dtype', choices=('auto', 'none', 'bf16'), default='auto')
+    parser.add_argument('--saved-run', type=Path, help='Replay saved RGB-D predictions and all joints, without loading weights')
+    parser.add_argument('--mode', choices=('with_poke','without_poke'), default='with_poke')
+    parser.add_argument('--scene-index', type=int, help='Saved scene to display (all its eligible joints)')
+    parser.add_argument('--top-k', type=int, help='Browse the best K complete scenes by mean axis error')
+    parser.add_argument('--show-pointcloud', action='store_true', help='Open a LIVE Open3D window with axes and all joint trajectories')
+    parser.add_argument('--list-top', action='store_true', help='Write/print ranked saved scenes without opening a window')
+    parser.add_argument('--depth', type=Path, help='Current image depth .npy in world units (live RGB-D inference)')
+    parser.add_argument('--intrinsics', type=Path, help='Camera intrinsic .npy [3,3]')
+    parser.add_argument('--extrinsics', type=Path, help='T_camera_world .npy [4,4]; default identity')
+    parser.add_argument('--object-mask', type=Path, help='Whole-object mask for live RGB-D cloud; default parent | child')
+    parser.add_argument('--viewer-test-seconds',type=float,default=0,help=argparse.SUPPRESS)
     args = parser.parse_args(argv)
     args.output_dir = artifact_path(args.output_dir)
     if args.ensemble_size < 1 or args.diffusion_steps < 1 or args.seed < 0:
         parser.error('Need positive ensemble/steps and a nonnegative seed')
+    if args.saved_run:
+        if args.top_k is not None and args.top_k < 1:
+            parser.error('--top-k must be positive')
+        if args.top_k is not None and args.scene_index is not None:
+            parser.error('Choose --top-k or --scene-index')
+        if not args.show_pointcloud and not args.list_top:
+            parser.error('Use --show-pointcloud or --list-top with --saved-run')
+    else:
+        missing=[flag for flag in ('checkpoint','image','parent_mask','child_mask','points') if getattr(args,flag) is None]
+        if missing:
+            parser.error('Raw inference requires '+', '.join('--'+flag.replace('_','-') for flag in missing))
+        if args.top_k is not None or args.scene_index is not None or args.list_top:
+            parser.error('--top-k, --scene-index and --list-top require --saved-run')
+        if args.show_pointcloud and (args.depth is None or args.intrinsics is None):
+            parser.error('Live RGB-D inference requires --depth and --intrinsics')
     return args
 
 
 def main(argv=None):
     args = parse_args(argv)
+    if args.saved_run:
+        from finetuning_pair.pointcloud_viewer import show_saved_run
+        output=None if args.output_dir == artifact_path('finetuning_pair/runs/inference') else args.output_dir
+        show_saved_run(args.saved_run, args.mode, args.top_k, args.scene_index, output,
+                       args.list_top, args.viewer_test_seconds)
+        return
+    import torch
+    from finetuning_pair.checkpoint_io import inspect_checkpoint, load_finetuned_weights, load_pretrained_weights
+    from finetuning_pair.model_adapter import FineTuningModel, LoRAConfig
+    from finetuning_pair.testing import sample_rollout
+    from finetuning_pair.train import build_myriad, _resolve_device
+    from finetuning_pair.visualizer import render_rollout
     info = inspect_checkpoint(args.checkpoint)
     cfg = info['train_config']
     image, known = prepare_inputs(
@@ -120,6 +152,12 @@ def main(argv=None):
                                          args.output_dir, observed_states=1, title='Child relative to frozen initial parent')
     (args.output_dir / 'metrics.json').write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result), flush=True)
+    if args.show_pointcloud:
+        from finetuning_pair.pointcloud_viewer import show_current_prediction
+        show_current_prediction(np.asarray(Image.open(args.image).convert('RGB')),
+            np.load(args.depth,allow_pickle=False),read_mask(args.object_mask) if args.object_mask else read_mask(args.parent_mask)|read_mask(args.child_mask),
+            np.load(args.intrinsics,allow_pickle=False),np.load(args.extrinsics,allow_pickle=False) if args.extrinsics else np.eye(4),
+            image.numpy(),predicted.detach().float().cpu().numpy(),known.numpy(),args.output_dir,args.viewer_test_seconds)
 
 
 if __name__ == '__main__':

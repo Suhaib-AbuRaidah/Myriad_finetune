@@ -127,6 +127,7 @@ class ArticulatedDataset(Dataset):
         training: bool | None = None,
         seed: int = 42,
         max_scenes: int | None = None,
+        first_scenes: int | None = None,
         supervise_occluded: bool = True,
         depth_atol: float = 0.005,
         depth_rtol: float = 0.005,
@@ -143,6 +144,8 @@ class ArticulatedDataset(Dataset):
             raise ValueError("boundary_margin and depth tolerances must be nonnegative")
         if max_track_ids < 1 or (max_scenes is not None and max_scenes < 1):
             raise ValueError("max_track_ids and max_scenes must be positive")
+        if first_scenes is not None and (first_scenes < 1 or max_scenes is not None):
+            raise ValueError("first_scenes must be positive and cannot be combined with max_scenes")
         if not np.isfinite(overlay_alpha) or not 0 <= overlay_alpha <= 1:
             raise ValueError("overlay_alpha must be in [0,1]")
         if not supervise_occluded:
@@ -155,6 +158,8 @@ class ArticulatedDataset(Dataset):
             self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.scene_dir = Path(root) / split / "scenes"
         self.files = sorted(self.scene_dir.glob("*.npz"))
+        if first_scenes is not None:
+            self.files = self.files[:first_scenes]
         if not self.files:
             raise FileNotFoundError(f"No NPZ scenes found in {self.scene_dir}")
         if max_scenes is not None and max_scenes < len(self.files):
