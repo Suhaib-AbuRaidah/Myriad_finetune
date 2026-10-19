@@ -1,0 +1,1957 @@
+{
+  "evaluation": "/home/aburaidah/Myriad_finetune/training_from_scratch/runs/test1_best_full_20261017",
+  "sampling": "Round-robin object_id/joint_ordinal groups, seeded shuffle; no error-based selection",
+  "unique_scenes": 56,
+  "pairs": 64,
+  "warmup_seconds": 0.06011931085959077,
+  "wall_seconds": 10.373782970011234,
+  "threads": 1,
+  "summary": {
+    "without_poke": {
+      "count": 64,
+      "mean_fit_seconds": 0.05219228960049804,
+      "median_fit_seconds": 0.052216870011761785,
+      "p90_fit_seconds": 0.07119011781178415,
+      "mean_io_seconds": 0.048268560007272754,
+      "estimated_877_pairs_seconds": 88.10416510601499
+    },
+    "with_poke": {
+      "count": 64,
+      "mean_fit_seconds": 0.04036755357083166,
+      "median_fit_seconds": 0.03942031948827207,
+      "p90_fit_seconds": 0.05782233788631856,
+      "mean_io_seconds": 0.0009466321280342527,
+      "estimated_877_pairs_seconds": 36.232540857905406
+    },
+    "ground_truth_control": {
+      "count": 64,
+      "mean_fit_seconds": 0.01960205764771672,
+      "median_fit_seconds": 0.020192209165543318,
+      "p90_fit_seconds": 0.02544627953320743,
+      "mean_io_seconds": 0.0006955616918276064,
+      "estimated_877_pairs_seconds": 17.801012160780374
+    }
+  },
+  "timings": [
+    {
+      "pair_index": 872,
+      "scene_index": 317,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0007094512693583965,
+      "fit_seconds": 0.05986724514514208,
+      "fit_available": true
+    },
+    {
+      "pair_index": 872,
+      "scene_index": 317,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007033068686723709,
+      "fit_seconds": 0.0416145334020257,
+      "fit_available": true
+    },
+    {
+      "pair_index": 872,
+      "scene_index": 317,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006976546719670296,
+      "fit_seconds": 0.020084904972463846,
+      "fit_available": true
+    },
+    {
+      "pair_index": 445,
+      "scene_index": 161,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.08021404361352324,
+      "fit_seconds": 0.04154179198667407,
+      "fit_available": true
+    },
+    {
+      "pair_index": 445,
+      "scene_index": 161,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0008300850167870522,
+      "fit_seconds": 0.01897019799798727,
+      "fit_available": true
+    },
+    {
+      "pair_index": 445,
+      "scene_index": 161,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007318919524550438,
+      "fit_seconds": 0.0032006381079554558,
+      "fit_available": true
+    },
+    {
+      "pair_index": 311,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "without_poke",
+      "io_seconds": 0.05846874602138996,
+      "fit_seconds": 0.04155374690890312,
+      "fit_available": true
+    },
+    {
+      "pair_index": 311,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "with_poke",
+      "io_seconds": 0.0007264777086675167,
+      "fit_seconds": 0.032036079093813896,
+      "fit_available": true
+    },
+    {
+      "pair_index": 311,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006803469732403755,
+      "fit_seconds": 0.015855142381042242,
+      "fit_available": true
+    },
+    {
+      "pair_index": 646,
+      "scene_index": 235,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0488129579462111,
+      "fit_seconds": 0.057932132855057716,
+      "fit_available": true
+    },
+    {
+      "pair_index": 646,
+      "scene_index": 235,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007919911295175552,
+      "fit_seconds": 0.04253269173204899,
+      "fit_available": true
+    },
+    {
+      "pair_index": 646,
+      "scene_index": 235,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006461488083004951,
+      "fit_seconds": 0.019919381011277437,
+      "fit_available": true
+    },
+    {
+      "pair_index": 468,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.12883229600265622,
+      "fit_seconds": 0.05810149107128382,
+      "fit_available": true
+    },
+    {
+      "pair_index": 468,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006821248680353165,
+      "fit_seconds": 0.04382307082414627,
+      "fit_available": true
+    },
+    {
+      "pair_index": 468,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006836852990090847,
+      "fit_seconds": 0.01966443471610546,
+      "fit_available": true
+    },
+    {
+      "pair_index": 301,
+      "scene_index": 109,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.03310309210792184,
+      "fit_seconds": 0.0404573162086308,
+      "fit_available": true
+    },
+    {
+      "pair_index": 301,
+      "scene_index": 109,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006908001378178596,
+      "fit_seconds": 0.024675455875694752,
+      "fit_available": true
+    },
+    {
+      "pair_index": 301,
+      "scene_index": 109,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000675777904689312,
+      "fit_seconds": 0.015731009654700756,
+      "fit_available": true
+    },
+    {
+      "pair_index": 336,
+      "scene_index": 121,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0695591508410871,
+      "fit_seconds": 0.03839555196464062,
+      "fit_available": true
+    },
+    {
+      "pair_index": 336,
+      "scene_index": 121,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0008133682422339916,
+      "fit_seconds": 0.04763376712799072,
+      "fit_available": true
+    },
+    {
+      "pair_index": 336,
+      "scene_index": 121,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006571509875357151,
+      "fit_seconds": 0.014413299039006233,
+      "fit_available": true
+    },
+    {
+      "pair_index": 342,
+      "scene_index": 123,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "without_poke",
+      "io_seconds": 0.06889151502400637,
+      "fit_seconds": 0.051624082028865814,
+      "fit_available": true
+    },
+    {
+      "pair_index": 342,
+      "scene_index": 123,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "with_poke",
+      "io_seconds": 0.0006965333595871925,
+      "fit_seconds": 0.04682530369609594,
+      "fit_available": true
+    },
+    {
+      "pair_index": 342,
+      "scene_index": 123,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006903400644659996,
+      "fit_seconds": 0.012515421025454998,
+      "fit_available": true
+    },
+    {
+      "pair_index": 174,
+      "scene_index": 64,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.05198225798085332,
+      "fit_seconds": 0.04777570301666856,
+      "fit_available": true
+    },
+    {
+      "pair_index": 174,
+      "scene_index": 64,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.000689264852553606,
+      "fit_seconds": 0.03449732158333063,
+      "fit_available": true
+    },
+    {
+      "pair_index": 174,
+      "scene_index": 64,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007762731984257698,
+      "fit_seconds": 0.016239004209637642,
+      "fit_available": true
+    },
+    {
+      "pair_index": 124,
+      "scene_index": 44,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.03060644306242466,
+      "fit_seconds": 0.047125976998358965,
+      "fit_available": true
+    },
+    {
+      "pair_index": 124,
+      "scene_index": 44,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006891149096190929,
+      "fit_seconds": 0.031949812080711126,
+      "fit_available": true
+    },
+    {
+      "pair_index": 124,
+      "scene_index": 44,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007201689295470715,
+      "fit_seconds": 0.020594564266502857,
+      "fit_available": true
+    },
+    {
+      "pair_index": 469,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0007036030292510986,
+      "fit_seconds": 0.05997140984982252,
+      "fit_available": true
+    },
+    {
+      "pair_index": 469,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006974008865654469,
+      "fit_seconds": 0.052721764892339706,
+      "fit_available": true
+    },
+    {
+      "pair_index": 469,
+      "scene_index": 169,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006922180764377117,
+      "fit_seconds": 0.021118365693837404,
+      "fit_available": true
+    },
+    {
+      "pair_index": 40,
+      "scene_index": 14,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.034208925906568766,
+      "fit_seconds": 0.05891261203214526,
+      "fit_available": true
+    },
+    {
+      "pair_index": 40,
+      "scene_index": 14,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006915070116519928,
+      "fit_seconds": 0.04034741502255201,
+      "fit_available": true
+    },
+    {
+      "pair_index": 40,
+      "scene_index": 14,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006882613524794579,
+      "fit_seconds": 0.020791093818843365,
+      "fit_available": true
+    },
+    {
+      "pair_index": 230,
+      "scene_index": 83,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.05323112802579999,
+      "fit_seconds": 0.05907566798850894,
+      "fit_available": true
+    },
+    {
+      "pair_index": 230,
+      "scene_index": 83,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006848140619695187,
+      "fit_seconds": 0.03871230501681566,
+      "fit_available": true
+    },
+    {
+      "pair_index": 230,
+      "scene_index": 83,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000684729777276516,
+      "fit_seconds": 0.020787536166608334,
+      "fit_available": true
+    },
+    {
+      "pair_index": 829,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.0023169112391769886,
+      "fit_seconds": 0.03137705801054835,
+      "fit_available": true
+    },
+    {
+      "pair_index": 829,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006701680831611156,
+      "fit_seconds": 0.05904633225873113,
+      "fit_available": true
+    },
+    {
+      "pair_index": 829,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007006642408668995,
+      "fit_seconds": 0.02180578513070941,
+      "fit_available": true
+    },
+    {
+      "pair_index": 724,
+      "scene_index": 265,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.05485981982201338,
+      "fit_seconds": 0.06320466194301844,
+      "fit_available": true
+    },
+    {
+      "pair_index": 724,
+      "scene_index": 265,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006761671975255013,
+      "fit_seconds": 0.04016301641240716,
+      "fit_available": true
+    },
+    {
+      "pair_index": 724,
+      "scene_index": 265,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006922641769051552,
+      "fit_seconds": 0.020936409011483192,
+      "fit_available": true
+    },
+    {
+      "pair_index": 256,
+      "scene_index": 94,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.05302172992378473,
+      "fit_seconds": 0.03660858562216163,
+      "fit_available": true
+    },
+    {
+      "pair_index": 256,
+      "scene_index": 94,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007714610546827316,
+      "fit_seconds": 0.03675380256026983,
+      "fit_available": true
+    },
+    {
+      "pair_index": 256,
+      "scene_index": 94,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007910188287496567,
+      "fit_seconds": 0.020250828005373478,
+      "fit_available": true
+    },
+    {
+      "pair_index": 781,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.04469100898131728,
+      "fit_seconds": 0.05173318414017558,
+      "fit_available": true
+    },
+    {
+      "pair_index": 781,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006898618303239346,
+      "fit_seconds": 0.03622088907286525,
+      "fit_available": true
+    },
+    {
+      "pair_index": 781,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006772628985345364,
+      "fit_seconds": 0.022498389706015587,
+      "fit_available": true
+    },
+    {
+      "pair_index": 508,
+      "scene_index": 184,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0022956649772822857,
+      "fit_seconds": 0.0512362839654088,
+      "fit_available": true
+    },
+    {
+      "pair_index": 508,
+      "scene_index": 184,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006963228806853294,
+      "fit_seconds": 0.04172061290591955,
+      "fit_available": true
+    },
+    {
+      "pair_index": 508,
+      "scene_index": 184,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007020272314548492,
+      "fit_seconds": 0.019858955405652523,
+      "fit_available": true
+    },
+    {
+      "pair_index": 562,
+      "scene_index": 203,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0021513323299586773,
+      "fit_seconds": 0.03192914882674813,
+      "fit_available": true
+    },
+    {
+      "pair_index": 562,
+      "scene_index": 203,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0007017459720373154,
+      "fit_seconds": 0.02207601722329855,
+      "fit_available": true
+    },
+    {
+      "pair_index": 562,
+      "scene_index": 203,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007804511114954948,
+      "fit_seconds": 0.015367685817182064,
+      "fit_available": true
+    },
+    {
+      "pair_index": 780,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0008294591680169106,
+      "fit_seconds": 0.058487068861722946,
+      "fit_available": true
+    },
+    {
+      "pair_index": 780,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006844024173915386,
+      "fit_seconds": 0.034691625740379095,
+      "fit_available": true
+    },
+    {
+      "pair_index": 780,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000667906366288662,
+      "fit_seconds": 0.020047068130224943,
+      "fit_available": true
+    },
+    {
+      "pair_index": 263,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.045004789251834154,
+      "fit_seconds": 0.059388523921370506,
+      "fit_available": true
+    },
+    {
+      "pair_index": 263,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0008848719298839569,
+      "fit_seconds": 0.053225127048790455,
+      "fit_available": true
+    },
+    {
+      "pair_index": 263,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006745466962456703,
+      "fit_seconds": 0.020136679988354445,
+      "fit_available": true
+    },
+    {
+      "pair_index": 493,
+      "scene_index": 178,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.05113802431151271,
+      "fit_seconds": 0.05540872784331441,
+      "fit_available": true
+    },
+    {
+      "pair_index": 493,
+      "scene_index": 178,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007349830120801926,
+      "fit_seconds": 0.05485551990568638,
+      "fit_available": true
+    },
+    {
+      "pair_index": 493,
+      "scene_index": 178,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006852429360151291,
+      "fit_seconds": 0.02023745933547616,
+      "fit_available": true
+    },
+    {
+      "pair_index": 160,
+      "scene_index": 59,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.030342471785843372,
+      "fit_seconds": 0.05019096005707979,
+      "fit_available": true
+    },
+    {
+      "pair_index": 160,
+      "scene_index": 59,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006970181129872799,
+      "fit_seconds": 0.04078816715627909,
+      "fit_available": true
+    },
+    {
+      "pair_index": 160,
+      "scene_index": 59,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006738770753145218,
+      "fit_seconds": 0.019731429405510426,
+      "fit_available": true
+    },
+    {
+      "pair_index": 651,
+      "scene_index": 237,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.34330928698182106,
+      "fit_seconds": 0.0962908249348402,
+      "fit_available": true
+    },
+    {
+      "pair_index": 651,
+      "scene_index": 237,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006810920313000679,
+      "fit_seconds": 0.05965691478922963,
+      "fit_available": true
+    },
+    {
+      "pair_index": 651,
+      "scene_index": 237,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007162527181208134,
+      "fit_seconds": 0.02061871299520135,
+      "fit_available": true
+    },
+    {
+      "pair_index": 104,
+      "scene_index": 38,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.03475794289261103,
+      "fit_seconds": 0.07814998086541891,
+      "fit_available": true
+    },
+    {
+      "pair_index": 104,
+      "scene_index": 38,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007061720825731754,
+      "fit_seconds": 0.05779451923444867,
+      "fit_available": true
+    },
+    {
+      "pair_index": 104,
+      "scene_index": 38,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007152911275625229,
+      "fit_seconds": 0.019856099039316177,
+      "fit_available": true
+    },
+    {
+      "pair_index": 291,
+      "scene_index": 106,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.045331903733313084,
+      "fit_seconds": 0.03240992408245802,
+      "fit_available": true
+    },
+    {
+      "pair_index": 291,
+      "scene_index": 106,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.000665782019495964,
+      "fit_seconds": 0.059952788054943085,
+      "fit_available": true
+    },
+    {
+      "pair_index": 291,
+      "scene_index": 106,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000659154262393713,
+      "fit_seconds": 0.038316018879413605,
+      "fit_available": true
+    },
+    {
+      "pair_index": 733,
+      "scene_index": 267,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.06566340662539005,
+      "fit_seconds": 0.039800012949854136,
+      "fit_available": true
+    },
+    {
+      "pair_index": 733,
+      "scene_index": 267,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.010018290020525455,
+      "fit_seconds": 0.02939050178974867,
+      "fit_available": true
+    },
+    {
+      "pair_index": 733,
+      "scene_index": 267,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006725769490003586,
+      "fit_seconds": 0.020681933965533972,
+      "fit_available": true
+    },
+    {
+      "pair_index": 687,
+      "scene_index": 250,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.12460594112053514,
+      "fit_seconds": 0.045601327903568745,
+      "fit_available": true
+    },
+    {
+      "pair_index": 687,
+      "scene_index": 250,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.000655527226626873,
+      "fit_seconds": 0.03977352799847722,
+      "fit_available": true
+    },
+    {
+      "pair_index": 687,
+      "scene_index": 250,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006371820345520973,
+      "fit_seconds": 0.020072286017239094,
+      "fit_available": true
+    },
+    {
+      "pair_index": 464,
+      "scene_index": 167,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.30706829903647304,
+      "fit_seconds": 0.077657800167799,
+      "fit_available": true
+    },
+    {
+      "pair_index": 464,
+      "scene_index": 167,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0007909727282822132,
+      "fit_seconds": 0.04358904203400016,
+      "fit_available": true
+    },
+    {
+      "pair_index": 464,
+      "scene_index": 167,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000693121924996376,
+      "fit_seconds": 0.03857816429808736,
+      "fit_available": true
+    },
+    {
+      "pair_index": 659,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 4,
+      "mode": "without_poke",
+      "io_seconds": 0.05287282960489392,
+      "fit_seconds": 0.03771742386743426,
+      "fit_available": true
+    },
+    {
+      "pair_index": 659,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 4,
+      "mode": "with_poke",
+      "io_seconds": 0.006147818174213171,
+      "fit_seconds": 0.028756247367709875,
+      "fit_available": true
+    },
+    {
+      "pair_index": 659,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 4,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007295417599380016,
+      "fit_seconds": 0.021535879001021385,
+      "fit_available": true
+    },
+    {
+      "pair_index": 657,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0006440840661525726,
+      "fit_seconds": 0.058243167120963335,
+      "fit_available": true
+    },
+    {
+      "pair_index": 657,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006758109666407108,
+      "fit_seconds": 0.03534544399008155,
+      "fit_available": true
+    },
+    {
+      "pair_index": 657,
+      "scene_index": 239,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0008460213430225849,
+      "fit_seconds": 0.0034028016962110996,
+      "fit_available": true
+    },
+    {
+      "pair_index": 212,
+      "scene_index": 77,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.04425773397088051,
+      "fit_seconds": 0.042747794184833765,
+      "fit_available": true
+    },
+    {
+      "pair_index": 212,
+      "scene_index": 77,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006756880320608616,
+      "fit_seconds": 0.047228879295289516,
+      "fit_available": true
+    },
+    {
+      "pair_index": 212,
+      "scene_index": 77,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006579048931598663,
+      "fit_seconds": 0.020639208145439625,
+      "fit_available": true
+    },
+    {
+      "pair_index": 878,
+      "scene_index": 319,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0022124010138213634,
+      "fit_seconds": 0.0589476078748703,
+      "fit_available": true
+    },
+    {
+      "pair_index": 878,
+      "scene_index": 319,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0007420247420668602,
+      "fit_seconds": 0.057834260165691376,
+      "fit_available": true
+    },
+    {
+      "pair_index": 878,
+      "scene_index": 319,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006720488891005516,
+      "fit_seconds": 0.021235516294836998,
+      "fit_available": true
+    },
+    {
+      "pair_index": 653,
+      "scene_index": 238,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.04854085389524698,
+      "fit_seconds": 0.06308199325576425,
+      "fit_available": true
+    },
+    {
+      "pair_index": 653,
+      "scene_index": 238,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0007426389493048191,
+      "fit_seconds": 0.034232810605317354,
+      "fit_available": true
+    },
+    {
+      "pair_index": 653,
+      "scene_index": 238,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006610671989619732,
+      "fit_seconds": 0.02020463300868869,
+      "fit_available": true
+    },
+    {
+      "pair_index": 270,
+      "scene_index": 98,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.05290466593578458,
+      "fit_seconds": 0.055747972801327705,
+      "fit_available": true
+    },
+    {
+      "pair_index": 270,
+      "scene_index": 98,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006739841774106026,
+      "fit_seconds": 0.047990093007683754,
+      "fit_available": true
+    },
+    {
+      "pair_index": 270,
+      "scene_index": 98,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006503378972411156,
+      "fit_seconds": 0.027181790675967932,
+      "fit_available": true
+    },
+    {
+      "pair_index": 338,
+      "scene_index": 122,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.052605913020670414,
+      "fit_seconds": 0.06457643629983068,
+      "fit_available": true
+    },
+    {
+      "pair_index": 338,
+      "scene_index": 122,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006902217864990234,
+      "fit_seconds": 0.029180587735027075,
+      "fit_available": true
+    },
+    {
+      "pair_index": 338,
+      "scene_index": 122,
+      "object_id": "rec_serial_elbow_arm_c0b80854bd2e43a8bc9a9afcecff9759",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007770499214529991,
+      "fit_seconds": 0.016541939694434404,
+      "fit_available": true
+    },
+    {
+      "pair_index": 98,
+      "scene_index": 35,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.07824309915304184,
+      "fit_seconds": 0.07996806595474482,
+      "fit_available": true
+    },
+    {
+      "pair_index": 98,
+      "scene_index": 35,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0016233338974416256,
+      "fit_seconds": 0.043012002017349005,
+      "fit_available": true
+    },
+    {
+      "pair_index": 98,
+      "scene_index": 35,
+      "object_id": "rec_serial_elbow_arm_64e2a3789d314da5b31c753a30dcc067",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006573721766471863,
+      "fit_seconds": 0.019440397154539824,
+      "fit_available": true
+    },
+    {
+      "pair_index": 828,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0006900359876453876,
+      "fit_seconds": 0.058591376058757305,
+      "fit_available": true
+    },
+    {
+      "pair_index": 828,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0008730674162507057,
+      "fit_seconds": 0.04535452090203762,
+      "fit_available": true
+    },
+    {
+      "pair_index": 828,
+      "scene_index": 302,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006576590240001678,
+      "fit_seconds": 0.02081768773496151,
+      "fit_available": true
+    },
+    {
+      "pair_index": 569,
+      "scene_index": 205,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.06559355603531003,
+      "fit_seconds": 0.07140007708221674,
+      "fit_available": true
+    },
+    {
+      "pair_index": 569,
+      "scene_index": 205,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006632450968027115,
+      "fit_seconds": 0.04255981603637338,
+      "fit_available": true
+    },
+    {
+      "pair_index": 569,
+      "scene_index": 205,
+      "object_id": "rec_cantilever_articulated_arm_90c74bf5a086403498a11d9a92c24869",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006456542760133743,
+      "fit_seconds": 0.020179785322397947,
+      "fit_available": true
+    },
+    {
+      "pair_index": 779,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0006440686993300915,
+      "fit_seconds": 0.04427970387041569,
+      "fit_available": true
+    },
+    {
+      "pair_index": 779,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.000702626071870327,
+      "fit_seconds": 0.037679786793887615,
+      "fit_available": true
+    },
+    {
+      "pair_index": 779,
+      "scene_index": 285,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007419581525027752,
+      "fit_seconds": 0.020096014253795147,
+      "fit_available": true
+    },
+    {
+      "pair_index": 308,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0006208270788192749,
+      "fit_seconds": 0.05626688664779067,
+      "fit_available": true
+    },
+    {
+      "pair_index": 308,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006525889039039612,
+      "fit_seconds": 0.030263341963291168,
+      "fit_available": true
+    },
+    {
+      "pair_index": 308,
+      "scene_index": 112,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006436239928007126,
+      "fit_seconds": 0.02885866817086935,
+      "fit_available": true
+    },
+    {
+      "pair_index": 329,
+      "scene_index": 118,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.05203992500901222,
+      "fit_seconds": 0.02415539836511016,
+      "fit_available": true
+    },
+    {
+      "pair_index": 329,
+      "scene_index": 118,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0007278742268681526,
+      "fit_seconds": 0.035328215919435024,
+      "fit_available": true
+    },
+    {
+      "pair_index": 329,
+      "scene_index": 118,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007597482763230801,
+      "fit_seconds": 0.0033685662783682346,
+      "fit_available": true
+    },
+    {
+      "pair_index": 206,
+      "scene_index": 75,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "without_poke",
+      "io_seconds": 0.002185971010476351,
+      "fit_seconds": 6.67930580675602e-05,
+      "fit_available": false
+    },
+    {
+      "pair_index": 206,
+      "scene_index": 75,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "with_poke",
+      "io_seconds": 0.0006001968868076801,
+      "fit_seconds": 0.00011495500802993774,
+      "fit_available": false
+    },
+    {
+      "pair_index": 206,
+      "scene_index": 75,
+      "object_id": "rec_robotic_arms_50fae505269842ff849990e1ec095c0f",
+      "joint_ordinal": 4,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006777788512408733,
+      "fit_seconds": 6.261700764298439e-05,
+      "fit_available": false
+    },
+    {
+      "pair_index": 782,
+      "scene_index": 286,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.029886456206440926,
+      "fit_seconds": 0.05270055588334799,
+      "fit_available": true
+    },
+    {
+      "pair_index": 782,
+      "scene_index": 286,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006783567368984222,
+      "fit_seconds": 0.05816212808713317,
+      "fit_available": true
+    },
+    {
+      "pair_index": 782,
+      "scene_index": 286,
+      "object_id": "rec_serial_elbow_arm_3ae3f7254c8147138241aa87eef5272c",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0009175329469144344,
+      "fit_seconds": 0.01969361025840044,
+      "fit_available": true
+    },
+    {
+      "pair_index": 410,
+      "scene_index": 149,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.05663826037198305,
+      "fit_seconds": 0.06528324773535132,
+      "fit_available": true
+    },
+    {
+      "pair_index": 410,
+      "scene_index": 149,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006675189360976219,
+      "fit_seconds": 0.059047447983175516,
+      "fit_available": true
+    },
+    {
+      "pair_index": 410,
+      "scene_index": 149,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006628949195146561,
+      "fit_seconds": 0.02004654612392187,
+      "fit_available": true
+    },
+    {
+      "pair_index": 224,
+      "scene_index": 81,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.045163107104599476,
+      "fit_seconds": 0.0332173490896821,
+      "fit_available": true
+    },
+    {
+      "pair_index": 224,
+      "scene_index": 81,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006622723303735256,
+      "fit_seconds": 0.031005949713289738,
+      "fit_available": true
+    },
+    {
+      "pair_index": 224,
+      "scene_index": 81,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000819419976323843,
+      "fit_seconds": 0.021070684771984816,
+      "fit_available": true
+    },
+    {
+      "pair_index": 264,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0006816745735704899,
+      "fit_seconds": 0.04957427876070142,
+      "fit_available": true
+    },
+    {
+      "pair_index": 264,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.000681266188621521,
+      "fit_seconds": 0.04623773694038391,
+      "fit_available": true
+    },
+    {
+      "pair_index": 264,
+      "scene_index": 96,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006484873592853546,
+      "fit_seconds": 0.020434931851923466,
+      "fit_available": true
+    },
+    {
+      "pair_index": 425,
+      "scene_index": 153,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "without_poke",
+      "io_seconds": 0.04788362979888916,
+      "fit_seconds": 0.033154754899442196,
+      "fit_available": true
+    },
+    {
+      "pair_index": 425,
+      "scene_index": 153,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "with_poke",
+      "io_seconds": 0.0006464510224759579,
+      "fit_seconds": 0.03598340414464474,
+      "fit_available": true
+    },
+    {
+      "pair_index": 425,
+      "scene_index": 153,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 4,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.00066768703982234,
+      "fit_seconds": 0.02824735501781106,
+      "fit_available": true
+    },
+    {
+      "pair_index": 96,
+      "scene_index": 34,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.04974003182724118,
+      "fit_seconds": 0.0658188802190125,
+      "fit_available": true
+    },
+    {
+      "pair_index": 96,
+      "scene_index": 34,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006842152215540409,
+      "fit_seconds": 0.0390075258910656,
+      "fit_available": true
+    },
+    {
+      "pair_index": 96,
+      "scene_index": 34,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006425720639526844,
+      "fit_seconds": 0.0267096608877182,
+      "fit_available": true
+    },
+    {
+      "pair_index": 280,
+      "scene_index": 101,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.03735496802255511,
+      "fit_seconds": 0.035485215950757265,
+      "fit_available": true
+    },
+    {
+      "pair_index": 280,
+      "scene_index": 101,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006841570138931274,
+      "fit_seconds": 0.03213359508663416,
+      "fit_available": true
+    },
+    {
+      "pair_index": 280,
+      "scene_index": 101,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006445851176977158,
+      "fit_seconds": 0.015354984905570745,
+      "fit_available": true
+    },
+    {
+      "pair_index": 807,
+      "scene_index": 294,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.0023377081379294395,
+      "fit_seconds": 0.058676810935139656,
+      "fit_available": true
+    },
+    {
+      "pair_index": 807,
+      "scene_index": 294,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.000687113031744957,
+      "fit_seconds": 0.03179416013881564,
+      "fit_available": true
+    },
+    {
+      "pair_index": 807,
+      "scene_index": 294,
+      "object_id": "rec_robotic_arms_0007",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007172189652919769,
+      "fit_seconds": 0.02070139581337571,
+      "fit_available": true
+    },
+    {
+      "pair_index": 379,
+      "scene_index": 137,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.06649431306868792,
+      "fit_seconds": 0.041849697940051556,
+      "fit_available": true
+    },
+    {
+      "pair_index": 379,
+      "scene_index": 137,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.000684794969856739,
+      "fit_seconds": 0.03283455315977335,
+      "fit_available": true
+    },
+    {
+      "pair_index": 379,
+      "scene_index": 137,
+      "object_id": "rec_serial_elbow_arm_c8111e5b8ef843138835f71ed1538cda",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006560892798006535,
+      "fit_seconds": 0.020620032213628292,
+      "fit_available": true
+    },
+    {
+      "pair_index": 22,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.05574680073186755,
+      "fit_seconds": 0.039480406790971756,
+      "fit_available": true
+    },
+    {
+      "pair_index": 22,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006905607879161835,
+      "fit_seconds": 0.03149423375725746,
+      "fit_available": true
+    },
+    {
+      "pair_index": 22,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006909128278493881,
+      "fit_seconds": 0.015270682983100414,
+      "fit_available": true
+    },
+    {
+      "pair_index": 516,
+      "scene_index": 186,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.0021183029748499393,
+      "fit_seconds": 0.034816506318748,
+      "fit_available": true
+    },
+    {
+      "pair_index": 516,
+      "scene_index": 186,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006708679720759392,
+      "fit_seconds": 0.03869812795892358,
+      "fit_available": true
+    },
+    {
+      "pair_index": 516,
+      "scene_index": 186,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006544780917465687,
+      "fit_seconds": 0.019571011886000633,
+      "fit_available": true
+    },
+    {
+      "pair_index": 143,
+      "scene_index": 52,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.04802802577614784,
+      "fit_seconds": 0.06498092180117965,
+      "fit_available": true
+    },
+    {
+      "pair_index": 143,
+      "scene_index": 52,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006627240218222141,
+      "fit_seconds": 0.061407063622027636,
+      "fit_available": true
+    },
+    {
+      "pair_index": 143,
+      "scene_index": 52,
+      "object_id": "rec_cantilever_articulated_arm_0004",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006767348386347294,
+      "fit_seconds": 0.020398913882672787,
+      "fit_available": true
+    },
+    {
+      "pair_index": 4,
+      "scene_index": 1,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.049902822356671095,
+      "fit_seconds": 0.09182409290224314,
+      "fit_available": true
+    },
+    {
+      "pair_index": 4,
+      "scene_index": 1,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006782137788832188,
+      "fit_seconds": 0.05235264403745532,
+      "fit_available": true
+    },
+    {
+      "pair_index": 4,
+      "scene_index": 1,
+      "object_id": "rec_cantilever_articulated_arm_e5d81287dde44db1a9e400dc7b2ac9bc",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007707681506872177,
+      "fit_seconds": 0.020416676066815853,
+      "fit_available": true
+    },
+    {
+      "pair_index": 760,
+      "scene_index": 276,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "without_poke",
+      "io_seconds": 0.03793657757341862,
+      "fit_seconds": 0.038002563174813986,
+      "fit_available": true
+    },
+    {
+      "pair_index": 760,
+      "scene_index": 276,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "with_poke",
+      "io_seconds": 0.0006749909371137619,
+      "fit_seconds": 0.04323579929769039,
+      "fit_available": true
+    },
+    {
+      "pair_index": 760,
+      "scene_index": 276,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 3,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000690690241754055,
+      "fit_seconds": 0.016315413173288107,
+      "fit_available": true
+    },
+    {
+      "pair_index": 20,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0006670444272458553,
+      "fit_seconds": 0.05735351191833615,
+      "fit_available": true
+    },
+    {
+      "pair_index": 20,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.000700120348483324,
+      "fit_seconds": 0.029151127208024263,
+      "fit_available": true
+    },
+    {
+      "pair_index": 20,
+      "scene_index": 7,
+      "object_id": "rec_robotic_arms_174c417651d64b078988f7688414b70a",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006818068213760853,
+      "fit_seconds": 0.019914771895855665,
+      "fit_available": true
+    },
+    {
+      "pair_index": 825,
+      "scene_index": 301,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.002560372930020094,
+      "fit_seconds": 0.0345435319468379,
+      "fit_available": true
+    },
+    {
+      "pair_index": 825,
+      "scene_index": 301,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0006733671762049198,
+      "fit_seconds": 0.03906711097806692,
+      "fit_available": true
+    },
+    {
+      "pair_index": 825,
+      "scene_index": 301,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006599309854209423,
+      "fit_seconds": 0.021298098377883434,
+      "fit_available": true
+    },
+    {
+      "pair_index": 168,
+      "scene_index": 62,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.055792595725506544,
+      "fit_seconds": 0.04251256911084056,
+      "fit_available": true
+    },
+    {
+      "pair_index": 168,
+      "scene_index": 62,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.000735787209123373,
+      "fit_seconds": 0.03864305512979627,
+      "fit_available": true
+    },
+    {
+      "pair_index": 168,
+      "scene_index": 62,
+      "object_id": "rec_cantilever_articulated_arm_e66020a994604556ae4625eb7cf5d2b2",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0007038768380880356,
+      "fit_seconds": 0.021563407965004444,
+      "fit_available": true
+    },
+    {
+      "pair_index": 248,
+      "scene_index": 90,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.05930730979889631,
+      "fit_seconds": 0.0843731239438057,
+      "fit_available": true
+    },
+    {
+      "pair_index": 248,
+      "scene_index": 90,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006802156567573547,
+      "fit_seconds": 0.028035243041813374,
+      "fit_available": true
+    },
+    {
+      "pair_index": 248,
+      "scene_index": 90,
+      "object_id": "rec_serial_elbow_arm_0c99ac188d8746fbb453e13c48b0b0be",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006652637384831905,
+      "fit_seconds": 0.020228289999067783,
+      "fit_available": true
+    },
+    {
+      "pair_index": 752,
+      "scene_index": 274,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.0442453739233315,
+      "fit_seconds": 0.051132960710674524,
+      "fit_available": true
+    },
+    {
+      "pair_index": 752,
+      "scene_index": 274,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006724079139530659,
+      "fit_seconds": 0.04224473889917135,
+      "fit_available": true
+    },
+    {
+      "pair_index": 752,
+      "scene_index": 274,
+      "object_id": "rec_cantilever_articulated_arm_53eb02010d80465abf4bd189075c6435",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.000684971921145916,
+      "fit_seconds": 0.01943293074145913,
+      "fit_available": true
+    },
+    {
+      "pair_index": 661,
+      "scene_index": 240,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "without_poke",
+      "io_seconds": 0.07378079788759351,
+      "fit_seconds": 0.07070021284744143,
+      "fit_available": true
+    },
+    {
+      "pair_index": 661,
+      "scene_index": 240,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "with_poke",
+      "io_seconds": 0.0007114699110388756,
+      "fit_seconds": 0.03481304505839944,
+      "fit_available": true
+    },
+    {
+      "pair_index": 661,
+      "scene_index": 240,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 2,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006551300175487995,
+      "fit_seconds": 0.015871470794081688,
+      "fit_available": true
+    },
+    {
+      "pair_index": 503,
+      "scene_index": 182,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "without_poke",
+      "io_seconds": 0.002154099754989147,
+      "fit_seconds": 0.05722584296017885,
+      "fit_available": true
+    },
+    {
+      "pair_index": 503,
+      "scene_index": 182,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "with_poke",
+      "io_seconds": 0.0006548380479216576,
+      "fit_seconds": 0.05725565506145358,
+      "fit_available": true
+    },
+    {
+      "pair_index": 503,
+      "scene_index": 182,
+      "object_id": "rec_robotic_arms_a0610297f2d749b3bd3ce8a85fd1bd3e",
+      "joint_ordinal": 1,
+      "mode": "ground_truth_control",
+      "io_seconds": 0.0006636409088969231,
+      "fit_seconds": 0.027896615210920572,
+      "fit_available": true
+    }
+  ]
+}
