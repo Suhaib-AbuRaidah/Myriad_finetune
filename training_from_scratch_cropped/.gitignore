@@ -1,0 +1,9 @@
+/runs/
+/feature_cache/
+/scene_cache/
+/tmp*/
+/.smoke-*/
+/compiler_cache/
+/verification/*.jsonl
+__pycache__/
+/tests/*.log
