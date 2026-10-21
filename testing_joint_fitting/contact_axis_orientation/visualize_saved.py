@@ -147,8 +147,10 @@ def fit_pairs(pairs, source, hypothesis):
         result = dict(joint_index=row['joint_index'], joint_ordinal=row['joint_ordinal'],
             pair_index=row['pair_index'], gt_type=row['gt_type'], color=list(pair['color']),
             prediction_file=row['prediction_file'], anchor=a['reference_world'].mean(0), fit=None)
-        if row['gt_type'] != 'revolute':
-            result['status'] = 'not fitted: candidate assumes revolute joints'
+        if row['gt_type'] == 'fixed':
+            result['status'] = 'fixed joint: no motion axis to fit (expected)'
+        elif row['gt_type'] != 'revolute':
+            result['status'] = f"{row['gt_type']} joint: unsupported by this revolute fitter"
         elif int(a['valid'][2:5].sum()) < 8:
             result['status'] = 'not fitted: fewer than eight valid observations in states 2..4'
         else:
@@ -194,10 +196,11 @@ def show_viewer(source, results, montage, scene, args):
     else:
         mask = np.isin(source['mesh_point_link_labels'], source['link_indices']) & np.isfinite(source['mesh_points']).all(-1)
         xyz, labels = source['mesh_points'][mask].astype(float), source['mesh_point_link_labels'][mask]
-        colors = np.full(xyz.shape, .68)
+        colors = np.full(xyz.shape, .45)
         for label in np.unique(labels):
             color = np.array(COLORS[int(label) % len(COLORS)])/255
-            colors[labels == label] = .55 + .40*color
+            # Saturated part colors without the previous pale white tint.
+            colors[labels == label] = .85*color
     if not len(xyz):
         raise ValueError('The initial object point cloud is empty')
     scale = max(float(np.linalg.norm(np.ptp(xyz, axis=0))), 1e-3)
@@ -229,6 +232,7 @@ def show_viewer(source, results, montage, scene, args):
     view.scene.set_background([.96, .97, .99, 1.])
     point_material = rendering.MaterialRecord()
     point_material.shader, point_material.point_size = 'defaultUnlit', args.point_size * window.scaling
+    point_material.base_color = [1., 1., 1., 1.]  # Fully opaque; preserve vertex colors.
     view.scene.add_geometry('Object point cloud', cloud, point_material)
     gt_names = []
     joint_names = {}
@@ -314,8 +318,9 @@ def show_viewer(source, results, montage, scene, args):
     panel.add_child(opacity)
     for result in results:
         ordinal = result['joint_ordinal']
-        checkbox = gui.Checkbox(f'Joint {ordinal}')
+        checkbox = gui.Checkbox(f"Joint {ordinal} ({result['gt_type']})")
         checkbox.checked = True
+        checkbox.enabled = bool(joint_names[ordinal])
 
         def toggle(checked, ordinal=ordinal):
             enabled[ordinal] = checked

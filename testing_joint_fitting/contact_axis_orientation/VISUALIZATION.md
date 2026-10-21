@@ -46,7 +46,7 @@ training_from_scratch_cropped/runs/full_test1_val80_20261021/
 ```
 
 The Open3D view shows the initial sampled mesh cloud, including surfaces not
-visible in the RGB-D frame. Its pastel part colors provide context; the stronger
+visible in the RGB-D frame. Its saturated, fully opaque part colors provide context; the
 axis colors match the montage tile headers and tracks. GT axes are green,
 slightly wider, and transparent. Toggle GT/predictions or individual joints in
 the side panel, adjust GT opacity, and use the reset button to restore the
@@ -60,6 +60,13 @@ estimated axis line nor its error and avoids presenting an arbitrary pivot
 representative as a unique physical joint point. GT uses the transform-consistent
 pivot reference, as in the evaluation, rather than the potentially inconsistent
 stored joint-origin point.
+
+Dataset-labeled fixed joints are shown in the montage and point cloud, but have
+no motion axis to fit or display. Their status reads "fixed joint: no motion axis
+to fit (expected)" and their axis toggle is disabled. This is an expected skip.
+Unsupported joint types, insufficient observations, and actual fitting failures
+retain separate explanatory messages. Joint-type labels come from the dataset;
+the candidate does not predict joint type.
 
 Useful options:
 
