@@ -57,6 +57,8 @@ def load_scene(run, split, scene_index, sample_id, hypothesis):
         # Retain only the initial meshes and RGB-D frames for visualization.
         initial = {'mesh_points', 'mesh_normals', 'mesh_point_link_labels', 'rgb', 'depth', 'link_segmentation'}
         source = {key: arrays[key][0].copy() if key in initial else arrays[key] for key in source_keys}
+        source['metadata'] = json.loads(str(arrays['metadata_json']))
+        source['object_scale'] = float(arrays['object_scale'].item())
     return manifest, scene, pairs, source
 
 
@@ -188,21 +190,26 @@ def fit_pairs(pairs, source, hypothesis):
 def show_viewer(source, results, montage, scene, args):
     import open3d as o3d
     from open3d.visualization import gui, rendering
-    from finetuning_pair.pointcloud_viewer import axis_segment, backproject_cloud
+    from finetuning_pair.pointcloud_viewer import axis_segment
 
-    if args.cloud == 'rgbd':
-        xyz, colors = backproject_cloud(source['rgb'], source['depth'], source['camera_intrinsic'],
-            source['camera_extrinsic'], np.isin(source['link_segmentation'], source['link_indices']))
-    else:
-        mask = np.isin(source['mesh_point_link_labels'], source['link_indices']) & np.isfinite(source['mesh_points']).all(-1)
-        xyz, labels = source['mesh_points'][mask].astype(float), source['mesh_point_link_labels'][mask]
-        colors = np.full(xyz.shape, .45)
-        for label in np.unique(labels):
-            color = np.array(COLORS[int(label) % len(COLORS)])/255
-            # Saturated part colors without the previous pale white tint.
-            colors[labels == label] = .85*color
+    # All sampled mesh points at the initial pose, including occluded surfaces.
+    # Do not apply image visibility, parent-child masks, FPS or voxel downsampling.
+    mask = np.isfinite(source['mesh_points']).all(-1)
+    xyz, labels = source['mesh_points'][mask].astype(float), source['mesh_point_link_labels'][mask]
+    if args.cloud_points not in (0,len(xyz)):
+        from .dense_cloud import dense_points
+        xyz, labels, details = dense_points(source,args.asset_root,args.cloud_points,args.cloud_seed)
+        print(f"Resampled original visual surfaces: {details['archive']}; alignment check "
+            f"max error {details['original_to_surface_max_distance']:.3g} world units.",flush=True)
+    colors = np.full(xyz.shape, .45)
+    for label in np.unique(labels):
+        color = np.array(COLORS[int(label) % len(COLORS)])/255
+        # Saturated part colors without the previous pale white tint.
+        colors[labels == label] = .85*color
     if not len(xyz):
         raise ValueError('The initial object point cloud is empty')
+    print(f'Point cloud: {len(xyz)} initial surface samples across {len(np.unique(labels))} parts '
+        '(including occluded surfaces).', flush=True)
     scale = max(float(np.linalg.norm(np.ptp(xyz, axis=0))), 1e-3)
     cloud = o3d.geometry.PointCloud(o3d.utility.Vector3dVector(xyz))
     cloud.colors = o3d.utility.Vector3dVector(colors)
@@ -233,7 +240,7 @@ def show_viewer(source, results, montage, scene, args):
     point_material = rendering.MaterialRecord()
     point_material.shader, point_material.point_size = 'defaultUnlit', args.point_size * window.scaling
     point_material.base_color = [1., 1., 1., 1.]  # Fully opaque; preserve vertex colors.
-    view.scene.add_geometry('Object point cloud', cloud, point_material)
+    view.scene.add_geometry('Full sampled mesh point cloud', cloud, point_material)
     gt_names = []
     joint_names = {}
     bounds = cloud.get_axis_aligned_bounding_box()
@@ -288,6 +295,7 @@ def show_viewer(source, results, montage, scene, args):
     em = window.theme.font_size
     panel = gui.ScrollableVert(.45*em, gui.Margins(em, em, em, em))
     panel.add_child(gui.Label(f"Scene {scene['scene_index']} | hypothesis {args.hypothesis}"))
+    panel.add_child(gui.Label(f'Full sampled mesh cloud: {len(xyz)} points'))
     panel.add_child(gui.Label('Solid axes: joint colors\nTransparent green: ground truth'))
     pred_toggle, gt_toggle = gui.Checkbox('Predicted axes'), gui.Checkbox('Ground-truth axes')
     pred_toggle.checked, gt_toggle.checked = True, args.show_gt
@@ -378,7 +386,13 @@ def parse_args():
     parser.add_argument('--gt-opacity', type=float, default=.28)
     parser.add_argument('--gt-trajectories', action='store_true', help='Add green dashed GT tracks to the saved montage')
     parser.add_argument('--image', choices=('model-input', 'raw'), default='model-input')
-    parser.add_argument('--cloud', choices=('mesh', 'rgbd'), default='mesh', help='Initial sampled mesh cloud or visible RGB-D surface')
+    parser.add_argument('--cloud', choices=('mesh',), default='mesh',
+        help='Full initial mesh-sampled point cloud, including occluded surfaces (default)')
+    parser.add_argument('--cloud-points',type=int,default=10000,
+        help='Surface samples for display (default 10000); 0 keeps the archived cloud')
+    parser.add_argument('--cloud-seed',type=int,default=42,help='Seed for reproducible display-cloud resampling')
+    parser.add_argument('--asset-root',type=Path,default=REPO.parent/'Articraft-10K',
+        help='Original compiled object archive root, needed for denser surface sampling')
     parser.add_argument('--tile-size', type=int, default=512, help='Each pair occupies a square tile of this many pixels')
     parser.add_argument('--columns', type=int, default=0, help='0 chooses a compact grid automatically')
     parser.add_argument('--axis-length', type=float, default=.65, help='Axis segment length as a fraction of object bounding-box diagonal')
@@ -387,6 +401,8 @@ def parse_args():
     args = parser.parse_args()
     if args.tile_size < 256 or args.columns < 0 or args.scene_index < 0:
         parser.error('tile-size must be >=256; columns and scene-index must be nonnegative')
+    if args.cloud_points < 0 or args.cloud_seed < 0:
+        parser.error('cloud-points and cloud-seed must be nonnegative')
     if not .02 <= args.gt_opacity <= 1.:
         parser.error('gt-opacity must be in [0.02, 1]')
     if not all(math.isfinite(v) and v > 0 for v in (args.axis_length, args.axis_radius, args.point_size)):
@@ -411,7 +427,8 @@ def main():
         hypothesis=args.hypothesis, checkpoint_step=manifest['checkpoint_step'],
         checkpoint_sha256=manifest['checkpoint_sha256'], candidate_config=config,
         fitting_states=[2,3,4], coordinate_frame='world', results=results,
-        unavailable_crops=excluded, arguments=vars(args) | {'run_dir': str(run), 'output_dir': str(output)}))
+        unavailable_crops=excluded, arguments=vars(args) | {'run_dir': str(run), 'output_dir': str(output),
+            'asset_root': str(args.asset_root)}))
     print('Opening the montage and Open3D windows. Close both to exit; no geometry image will be saved.', flush=True)
     show_viewer(source, results, montage, scene, args)
 

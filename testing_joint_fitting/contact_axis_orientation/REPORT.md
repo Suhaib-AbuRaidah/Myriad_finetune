@@ -1,5 +1,8 @@
 # Contact axis orientation experiment
 
+For the full fitting procedure, equations, optimizer settings, limitations and
+the exact meaning of `ambiguous_mixture_strength128`, see [ALGORITHM.md](ALGORITHM.md).
+
 Evaluated 50 configurations on the original **80 test1 scenes / 204 revolute pairs**. The recommended development configuration is `ambiguous_mixture_strength128`.
 
 These are the original saved uncropped hypothesis-zero Myriad predictions, without a poke. No neural inference or training was rerun. The cohort, predictions and production fitting are unchanged.

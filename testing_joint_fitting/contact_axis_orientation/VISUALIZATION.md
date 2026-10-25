@@ -45,8 +45,24 @@ training_from_scratch_cropped/runs/full_test1_val80_20261021/
     joint_parameters.json
 ```
 
-The Open3D view shows the initial sampled mesh cloud, including surfaces not
-visible in the RGB-D frame. Its saturated, fully opaque part colors provide context; the
+The Open3D view defaults to **10,000 surface samples**, including occluded
+surfaces. `dense_cloud.py` reads the original compiled URDF archive and samples
+its box/cylinder/sphere and OBJ visual surfaces by surface area, then applies
+object scale, baked object-frame rotation and saved initial link poses. This
+adds actual surface samples rather than duplicating or jittering the saved
+points. The original assets default to the sibling `Articraft-10K` directory;
+set `--asset-root` if they live elsewhere. Mesh archive contents are read in
+memory without extraction.
+
+Use `--cloud-points 20000` for a denser cloud or `--cloud-points 0` to display
+all finite original `mesh_points[0]` samples (4096 per scene). A fixed seed makes
+resampling reproducible; `--cloud-seed` changes it. Display resampling never
+changes the 4096-point inputs used by the fitter. Initial saved points are
+checked against original surfaces to catch pose/asset mismatches, allowing
+small differences from tessellated primitive surfaces. Point count is printed
+and shown in the viewer panel. The reconstructed RGB-D cloud mode has been
+removed; `--cloud mesh` explicitly selects the surface-cloud mode.
+Its saturated, fully opaque part colors provide context; the
 axis colors match the montage tile headers and tracks. GT axes are green,
 slightly wider, and transparent. Toggle GT/predictions or individual joints in
 the side panel, adjust GT opacity, and use the reset button to restore the
@@ -71,15 +87,19 @@ the candidate does not predict joint type.
 Useful options:
 
 ```bash
-# Visible RGB-D surface with natural image colors, raw untinted crop backgrounds,
+# Full sampled mesh cloud, raw untinted crop backgrounds,
 # and GT trajectories as well as transparent GT axes:
 python -m testing_joint_fitting.contact_axis_orientation.visualize_saved \
   --scene-index 0 --show-gt --gt-opacity 0.3 \
-  --cloud rgbd --image raw --gt-trajectories
+  --cloud mesh --image raw --gt-trajectories
 
 # Another hypothesis, a single montage row, larger square tiles:
 python -m testing_joint_fitting.contact_axis_orientation.visualize_saved \
   --scene-index 10 --hypothesis 1 --columns 4 --tile-size 640 --show-gt
+
+# Denser surface sampling with smaller on-screen points:
+python -m testing_joint_fitting.contact_axis_orientation.visualize_saved \
+  --scene-index 12 --cloud-points 10000 --point-size 2 --show-gt
 ```
 
 Additional options include `--run-dir`, `--output-dir`, `--axis-length`
@@ -97,7 +117,10 @@ the saved inference/evaluation files.
 Implementation follows the existing saved-crop preview and point-cloud viewer
 in `training_from_scratch_cropped/full_inference/preview.py` and
 `finetuning_pair/pointcloud_viewer.py`. The new script was syntax-checked without
-running it, fitting joints or opening any window, as requested.
+running its entrypoint, fitting joints or opening any window, as requested.
+The surface-sampling helper was checked on one scene for each of the 26 archived
+object identities: all produced 100,000 finite points, retained all parts, and
+passed initial-surface alignment checks. The Open3D viewer itself was not run.
 
 The axes use `defaultLit` and `defaultLitTransparency`. Open3D 0.19's
 `defaultUnlitTransparency` takes an updater path that requests a missing
