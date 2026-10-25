@@ -1,5 +1,30 @@
 # Contact axis orientation experiment
 
+## Follow-up: soft contact-center pivot refinement (25 October 2026)
+
+The new loop tested 29 configurations while retaining the orientation prior.
+The selected `symmetric_mean64_adaptive128` uses a symmetric contact-patch
+centroid and a stronger position pull that weakens on clean trajectories.
+
+| Cohort | Pairs | Previous mean pivot | Refined mean pivot | Reduction | Previous mean axis ° | Refined mean axis ° |
+|---|---:|---:|---:|---:|---:|---:|
+| Original development | 204 | 0.047689 | 0.007573 | 84.12% | 2.390 | 2.482 |
+| Frozen validation transfer | 134 | 0.044783 | 0.012450 | 72.20% | 6.240 | 6.996 |
+
+Pivot distances use dataset world units. Development axis ≤15° remains 97.55%;
+validation changes from 93.28% to 92.54%. Mean rotation error improves on both
+cohorts, while reprojection error and clean-track geometry bias increase.
+The new prototype remains experimental; validation retains severe contact-axis
+outliers. No validation retuning, inference or training was performed.
+
+Read the [full second-loop report](pivot_refinement/REPORT.md) for all variants,
+controls, per-object/per-joint results, bootstrap intervals and limitations.
+The new opt-in interface is [pivot_refinement/candidate.py](pivot_refinement/candidate.py).
+Fourteen tests and an independent audit of 12,368 saved fits passed.
+The original fitter and the historical results below remain unchanged.
+
+## Original orientation refinement
+
 For the full fitting procedure, equations, optimizer settings, limitations and
 the exact meaning of `ambiguous_mixture_strength128`, see [ALGORITHM.md](ALGORITHM.md).
 

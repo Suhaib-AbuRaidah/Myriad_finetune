@@ -1,5 +1,13 @@
 # Contact orientation experiment
 
+The second refinement loop now adds a soft, noise-adaptive pull toward a
+symmetric contact-patch centroid. It reduces mean pivot error by 84.12% on
+development and 72.20% on the existing frozen validation cohort, with some axis
+and clean-track bias tradeoffs. See [pivot_refinement/REPORT.md](pivot_refinement/REPORT.md)
+and [pivot_refinement/README.md](pivot_refinement/README.md).
+Its opt-in interface is `pivot_refinement.candidate.estimate_motion`; the original
+`candidate.estimate_motion` below remains the previous frozen prototype.
+
 This is an isolated development experiment. Production fitting, model weights,
 training scripts, saved predictions, and the original subset are left untouched.
 
